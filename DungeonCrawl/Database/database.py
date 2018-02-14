@@ -25,8 +25,8 @@ class Database:
         self.c.exeucte("CREATE TABLE IF NOT EXISTS enemy_locations(enemy_name TEXT, enemy_x INT, enemy_y INT)")#table for enemy location
 
 
-    def update_player_location(self):
-        return
+    def update_player_location(self,playerx,playery):
+        self.c.execute("UPDATE player_locations WHERE player_x = ? AND player_y = ?",(playerx,playery))
 
 
     def update_enemy_location(self,enemy_name): #should find the specific enemy with the name
